@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CoffeeShopApplication<CoffeeShop>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.sarkhan.CoffeeShop.CoffeeShopApplication",
+            "projectName": "CoffeeShop",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

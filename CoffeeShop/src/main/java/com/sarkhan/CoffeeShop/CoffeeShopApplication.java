@@ -8,6 +8,8 @@ public class CoffeeShopApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CoffeeShopApplication.class, args);
+		int alam=3;
+		System.out.println(alam);
 	}
 
 }
