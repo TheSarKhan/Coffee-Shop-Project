@@ -14,6 +14,6 @@ public class Coffee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String coffeeName;
+    private String name;
 
 }
