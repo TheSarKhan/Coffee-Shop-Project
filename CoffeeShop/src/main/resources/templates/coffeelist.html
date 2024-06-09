@@ -15,12 +15,14 @@
             <tr>
                 <td>ID</td>
                 <td>Name</td>
+                <td>Price</td>
             </tr>
         </thead>
         <tbody>
             <tr th:each="coffee : ${coffees}">
                 <td th:text="${coffee.id}"></td>
                 <td th:text="${coffee.name}"></td>
+                <td th:text="${coffee.price} + '$' " ></td>
             </tr>
         </tbody>
     </table>
