@@ -1,0 +1,1 @@
+Java'daki Optional sınıfı, bir değerin var olup olmadığını belirtmek için kullanılan bir konteyner nesnesidir.
