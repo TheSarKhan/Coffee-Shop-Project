@@ -1,5 +1,7 @@
 package com.sarkhan.CoffeeShop.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +25,11 @@ public class AdminController {
 
     @PostMapping("/addcoffee")
     public String addCoffee(@ModelAttribute Coffee coffee) {
+        Optional<Coffee> existingCoffee = coffeeJPA.findByName(coffee.getName());
+        if (existingCoffee.isPresent()) {
+            return "redirect:/error";
+        }
         coffeeJPA.save(coffee);
         return "redirect:/coffeelist";
     }
-
-
 }
