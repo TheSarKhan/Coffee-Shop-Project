@@ -1,1 +1,15 @@
 Java'daki Optional sınıfı, bir değerin var olup olmadığını belirtmek için kullanılan bir konteyner nesnesidir.
+Spring Boot Devtools - Otomatik proyekti save edende refresh etmesi ucun
+ThymeLeaf-Frontent Texnologiyasi istifade elemek ucun
+MySQL Driver - MYSQL-e qosulmaq ucun
+JDBC :API -Database qosulub query gondermek ucun
+JPA
+Spring Server- Tomcat Kitabxanalari import elemek ucun
+
+Model View Controller
+Model - Melumatlarin dasinmasi hissesidir. Bizim qurdugumuz 
+proyekte informasiyanin gelib getmeyi bu sinifler terefinden idare olunur 
+View - Gorduyumuz pencerelerdir
+Controller - Melumat uzerinde isleyenler bunlardir
+
+coffeeName (Model) ==> coffee_name (DB)
