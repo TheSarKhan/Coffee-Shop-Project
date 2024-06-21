@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sarkhan.CoffeeShop.jpa.coffeeJPA.CoffeeJPA;
 import com.sarkhan.CoffeeShop.model.Coffee;
+ 
 
 
 
@@ -21,7 +22,9 @@ public class CoffeeRestController {
 @GetMapping()
 public List<Coffee> findAll(){
   return coffeeJPA.findAll();
-}
+}  
+
+
 @GetMapping(path = "/{id}")
 public Coffee findById(@PathVariable(name="id")Integer id){
   return coffeeJPA.findById(id).get();

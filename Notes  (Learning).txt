@@ -14,3 +14,4 @@ Controller - Melumat uzerinde isleyenler bunlardir
 
 coffeeName (Model) ==> coffee_name (DB)
 Eger css external importda problem yasanirsa, /static/styles.style.css yolunu yoxlamaq lazimdir. Static qovlugunda olub olmadigina bax !
+ Thymeleafda redirect elemek ucun @RestControllerde yox @Controllerde mappingleri (@getmapping @postmapping ve s) yaz
