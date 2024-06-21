@@ -8,9 +8,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
+</script>
 </head>
 <body>
-    <table class="table">
+    <table id="jQTable">
         <thead>
             <tr>
                 <td>ID</td>
@@ -29,5 +33,10 @@
         </tbody>
     </table>
     <a th:href="@{admin}" class="btn btn-success">Admin page</a>
+    <script>
+        $(document).ready( function () {
+    $('#jQTable').DataTable();
+} )
+    </script>
 </body>
 </html>
