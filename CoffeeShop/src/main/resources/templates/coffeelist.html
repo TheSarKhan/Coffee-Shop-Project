@@ -15,6 +15,7 @@
             <tr>
                 <td>ID</td>
                 <td>Name</td>
+                <td>Description</td>
                 <td>Price</td>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
             <tr th:each="coffee : ${coffees}">
                 <td th:text="${coffee.id}"></td>
                 <td th:text="${coffee.name}"></td>
+                <td th:text="${coffee.description}"></td>
                 <td th:text="${coffee.price} + '$' " ></td>
             </tr>
         </tbody>

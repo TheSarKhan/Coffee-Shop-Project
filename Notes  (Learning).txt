@@ -13,3 +13,4 @@ View - Gorduyumuz pencerelerdir
 Controller - Melumat uzerinde isleyenler bunlardir
 
 coffeeName (Model) ==> coffee_name (DB)
+Eger css external importda problem yasanirsa, /static/styles.style.css yolunu yoxlamaq lazimdir. Static qovlugunda olub olmadigina bax !
