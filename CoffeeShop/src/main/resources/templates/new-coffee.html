@@ -13,6 +13,9 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Coffee add form</h2>
         <form th:action="@{/addcoffee}" method="post" th:object="${coffee}">
+           
+            <input type="hidden" th:field="*{id}" >
+       
             <div class="form-group">
                 <label for="kahveAdi">Coffee Name</label>
                 <input type="text" class="form-control" th:field="*{name}" id="kahveAdi" placeholder="Enter name">

@@ -30,10 +30,16 @@
                 <td th:text="${coffee.name}"></td>
                 <td th:text="${coffee.description}"></td>
                 <td th:text="${coffee.price} + '$' " ></td>
-                <td><form th:action="@{/coffees/delete/{id}(id=${coffee.id})}" method="post" style="display:inline;">
+                <td>
+                    <form th:action="@{/coffees/delete/{id}(id=${coffee.id})}" method="post" style="display:inline;">
                     <input type="hidden" name="_method" value="delete" />
                     <button type="submit" class="btn btn-danger">Delete</button>
-                </form></td>
+                </form>
+                <form th:action="@{/coffees/update/{id}(id=${coffee.id})}" method="get" style="display:inline;">
+                    <input type="hidden" name="_method" value="update" />
+                    <button type="submit" class="btn btn-warning">Update</button>
+                </form>
+            </td>
             </tr>
         </tbody>
     </table>

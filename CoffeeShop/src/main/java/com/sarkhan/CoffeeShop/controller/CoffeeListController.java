@@ -1,11 +1,13 @@
 package com.sarkhan.CoffeeShop.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -33,10 +35,23 @@ public String showNewCoffeePage(Model model) {
  @PostMapping("/coffees/delete/{id}")
     public String deleteCoffee(@PathVariable("id") int id, Model model) {
         boolean coffeeExist = coffeeJPA.findById(id).isPresent();
-       
-          System.out.println(id);
-            coffeeJPA.deleteById(id);
+       if (coffeeExist) {
+        System.out.println(id);
+        coffeeJPA.deleteById(id);
+       }
             return "redirect:/coffeelist";
         
     }
+@GetMapping("/coffees/update/{id}")
+public String updateCoffee(@PathVariable("id") int id, @ModelAttribute("coffee") Coffee updatedCoffee, Model model) {
+    
+    Optional<Coffee> coffeeOptional = coffeeJPA.findById(id);
+    boolean coffeeExist=coffeeOptional.isPresent();
+    Coffee coffee=new Coffee();
+  if (coffeeExist) {
+    coffee=coffeeOptional.get();
+  }
+    model.addAttribute("coffee", coffee);
+    return "new-coffee";  
+}
 }
