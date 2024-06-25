@@ -1,0 +1,65 @@
+.card {
+    width: 300px; /* Kartın genişliğini belirler */
+    margin: 20px auto; /* Kartın etrafında boşluk bırakır ve ortalar */
+    border: 1px solid #ddd; /* Hafif bir çerçeve ekler */
+    border-radius: 8px; /* Köşeleri yuvarlar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti ekler */
+    overflow: hidden; /* İçerik taşmasını önler */
+}
+
+.card-img-top {
+    width: 100%; /* Resmin kart genişliğini kaplamasını sağlar */
+    height: auto; /* Orantılı olarak yüksekliği ayarlar */
+    border-bottom: 1px solid #ddd; /* Resmin altına çerçeve ekler */
+}
+
+.card-body {
+    padding: 16px; /* İçeriğin etrafında boşluk bırakır */
+}
+
+.card-title {
+    margin: 0 0 10px; /* Başlık altına boşluk bırakır */
+    font-size: 1.25em; /* Başlık boyutunu ayarlar */
+    color: #333; /* Başlık rengini ayarlar */
+}
+
+.card-text {
+    font-size: 1em; /* Metin boyutunu ayarlar */
+    color: #666; /* Metin rengini ayarlar */
+}
+.card-container {
+    display: flex; /* Flexbox düzeni uygular */
+    justify-content: center; /* Kartları yatayda ortalar */
+    gap: 20px; /* Kartlar arasındaki boşluğu ayarlar */
+    padding: 20px; /* Konteynerin etrafında boşluk bırakır */
+    flex-wrap: wrap; /* Kartların taşmasını önler ve yeni satıra geçmesini sağlar */
+}
+
+.card {
+    width: 300px; /* Kartın genişliğini belirler */
+    border: 1px solid #ddd; /* Hafif bir çerçeve ekler */
+    border-radius: 8px; /* Köşeleri yuvarlar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti ekler */
+    overflow: hidden; /* İçerik taşmasını önler */
+}
+
+.card-img-top {
+    width: 100%; /* Resmin kart genişliğini kaplamasını sağlar */
+    height: auto; /* Orantılı olarak yüksekliği ayarlar */
+    border-bottom: 1px solid #ddd; /* Resmin altına çerçeve ekler */
+}
+
+.card-body {
+    padding: 16px; /* İçeriğin etrafında boşluk bırakır */
+}
+
+.card-title {
+    margin: 0 0 10px; /* Başlık altına boşluk bırakır */
+    font-size: 1.25em; /* Başlık boyutunu ayarlar */
+    color: #333; /* Başlık rengini ayarlar */
+}
+
+.card-text {
+    font-size: 1em; /* Metin boyutunu ayarlar */
+    color: #666; /* Metin rengini ayarlar */
+}

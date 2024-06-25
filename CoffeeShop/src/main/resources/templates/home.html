@@ -6,117 +6,10 @@
     <title>Coffee Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<link rel="stylesheet" th:href="@{/styles/menu.css}">
+<link rel="stylesheet" th:href="@{/styles/home.css}">
 </head>
-<style>/* styles.css */
-
-    body {
-        font-family: Arial, sans-serif;
-    }
-    
-    .header {
-        background: url('coffee-shop.jpg') no-repeat center center/cover;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    
-    .header h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-    }
-    
-    .header p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .section {
-        padding: 60px 0;
-    }
-    
-    .section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 30px;
-    }
-    
-    .bg-light {
-        background-color: #f8f9fa !important;
-    }
-    
-    footer {
-        background-color: #343a40;
-        color: #ffffff;
-    }
-    .card {
-    width: 300px; /* Kartın genişliğini belirler */
-    margin: 20px auto; /* Kartın etrafında boşluk bırakır ve ortalar */
-    border: 1px solid #ddd; /* Hafif bir çerçeve ekler */
-    border-radius: 8px; /* Köşeleri yuvarlar */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti ekler */
-    overflow: hidden; /* İçerik taşmasını önler */
-}
-
-.card-img-top {
-    width: 100%; /* Resmin kart genişliğini kaplamasını sağlar */
-    height: auto; /* Orantılı olarak yüksekliği ayarlar */
-    border-bottom: 1px solid #ddd; /* Resmin altına çerçeve ekler */
-}
-
-.card-body {
-    padding: 16px; /* İçeriğin etrafında boşluk bırakır */
-}
-
-.card-title {
-    margin: 0 0 10px; /* Başlık altına boşluk bırakır */
-    font-size: 1.25em; /* Başlık boyutunu ayarlar */
-    color: #333; /* Başlık rengini ayarlar */
-}
-
-.card-text {
-    font-size: 1em; /* Metin boyutunu ayarlar */
-    color: #666; /* Metin rengini ayarlar */
-}
-.card-container {
-    display: flex; /* Flexbox düzeni uygular */
-    justify-content: center; /* Kartları yatayda ortalar */
-    gap: 20px; /* Kartlar arasındaki boşluğu ayarlar */
-    padding: 20px; /* Konteynerin etrafında boşluk bırakır */
-    flex-wrap: wrap; /* Kartların taşmasını önler ve yeni satıra geçmesini sağlar */
-}
-
-.card {
-    width: 300px; /* Kartın genişliğini belirler */
-    border: 1px solid #ddd; /* Hafif bir çerçeve ekler */
-    border-radius: 8px; /* Köşeleri yuvarlar */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti ekler */
-    overflow: hidden; /* İçerik taşmasını önler */
-}
-
-.card-img-top {
-    width: 100%; /* Resmin kart genişliğini kaplamasını sağlar */
-    height: auto; /* Orantılı olarak yüksekliği ayarlar */
-    border-bottom: 1px solid #ddd; /* Resmin altına çerçeve ekler */
-}
-
-.card-body {
-    padding: 16px; /* İçeriğin etrafında boşluk bırakır */
-}
-
-.card-title {
-    margin: 0 0 10px; /* Başlık altına boşluk bırakır */
-    font-size: 1.25em; /* Başlık boyutunu ayarlar */
-    color: #333; /* Başlık rengini ayarlar */
-}
-
-.card-text {
-    font-size: 1em; /* Metin boyutunu ayarlar */
-    color: #666; /* Metin rengini ayarlar */
-}
-
-    </style>
+ 
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -131,7 +24,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
+                        <a class="nav-link" th:href="@{menu}">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -143,16 +36,7 @@
             </div>
         </div>
     </nav>
-
-    <div class="card-container">
-        <div class="card" th:each="coffee : ${coffees}">
-            <img class="card-img-top" th:src="@{/images/Logo.png}" alt="Title" />
-            <div class="card-body">
-                <h4 class="card-title" th:text="${coffee.name}">N</h4>
-                <p class="card-text" th:text="${coffee.price}">P</p>
-                <p class="card-text" th:text="${coffee.description}">D</p>
-            </div>
-        </div>
+    <div th:include="menu :: menu"></div>
     
     
  
