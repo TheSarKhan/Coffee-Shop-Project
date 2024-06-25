@@ -50,6 +50,72 @@
         background-color: #343a40;
         color: #ffffff;
     }
+    .card {
+    width: 300px; /* Kartın genişliğini belirler */
+    margin: 20px auto; /* Kartın etrafında boşluk bırakır ve ortalar */
+    border: 1px solid #ddd; /* Hafif bir çerçeve ekler */
+    border-radius: 8px; /* Köşeleri yuvarlar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti ekler */
+    overflow: hidden; /* İçerik taşmasını önler */
+}
+
+.card-img-top {
+    width: 100%; /* Resmin kart genişliğini kaplamasını sağlar */
+    height: auto; /* Orantılı olarak yüksekliği ayarlar */
+    border-bottom: 1px solid #ddd; /* Resmin altına çerçeve ekler */
+}
+
+.card-body {
+    padding: 16px; /* İçeriğin etrafında boşluk bırakır */
+}
+
+.card-title {
+    margin: 0 0 10px; /* Başlık altına boşluk bırakır */
+    font-size: 1.25em; /* Başlık boyutunu ayarlar */
+    color: #333; /* Başlık rengini ayarlar */
+}
+
+.card-text {
+    font-size: 1em; /* Metin boyutunu ayarlar */
+    color: #666; /* Metin rengini ayarlar */
+}
+.card-container {
+    display: flex; /* Flexbox düzeni uygular */
+    justify-content: center; /* Kartları yatayda ortalar */
+    gap: 20px; /* Kartlar arasındaki boşluğu ayarlar */
+    padding: 20px; /* Konteynerin etrafında boşluk bırakır */
+    flex-wrap: wrap; /* Kartların taşmasını önler ve yeni satıra geçmesini sağlar */
+}
+
+.card {
+    width: 300px; /* Kartın genişliğini belirler */
+    border: 1px solid #ddd; /* Hafif bir çerçeve ekler */
+    border-radius: 8px; /* Köşeleri yuvarlar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti ekler */
+    overflow: hidden; /* İçerik taşmasını önler */
+}
+
+.card-img-top {
+    width: 100%; /* Resmin kart genişliğini kaplamasını sağlar */
+    height: auto; /* Orantılı olarak yüksekliği ayarlar */
+    border-bottom: 1px solid #ddd; /* Resmin altına çerçeve ekler */
+}
+
+.card-body {
+    padding: 16px; /* İçeriğin etrafında boşluk bırakır */
+}
+
+.card-title {
+    margin: 0 0 10px; /* Başlık altına boşluk bırakır */
+    font-size: 1.25em; /* Başlık boyutunu ayarlar */
+    color: #333; /* Başlık rengini ayarlar */
+}
+
+.card-text {
+    font-size: 1em; /* Metin boyutunu ayarlar */
+    color: #666; /* Metin rengini ayarlar */
+}
+
     </style>
 <body>
     <!-- Navigation Bar -->
@@ -78,81 +144,19 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="header text-center text-white">
-        <div class="container">
-            <h1>Welcome to Coffee Shop</h1>
-            <p>Your daily dose of freshly brewed coffee</p>
-            <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-5 text-center">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are dedicated to serving the best coffee in town with a smile. Our beans are sourced from the finest growers, and our baristas are trained to craft each cup with care.</p>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="py-5 bg-light text-center">
-        <div class="container">
-            <h2>Our Menu</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img th:src="@{/images/espresso.jpg}" class="card-img-top" alt="Espresso">
-                        <div class="card-body">
-                            <h5 class="card-title">Espresso</h5>
-                            <p class="card-text">Rich and bold espresso, the perfect start to your day.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img th:src="@{/images/cappuccino.jpg}" class="card-img-top" alt="Cappuccino">
-                        <div class="card-body">
-                            <h5 class="card-title">Cappuccino</h5>
-                            <p class="card-text">A perfect blend of espresso, steamed milk, and foam.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img th:src="@{/images/latte.jpg}" class="card-img-top" alt="Latte">
-                        <div class="card-body">
-                            <h5 class="card-title">Latte</h5>
-                            <p class="card-text">Smooth and creamy, a classic favorite.</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="card-container">
+        <div class="card" th:each="coffee : ${coffees}">
+            <img class="card-img-top" th:src="@{/images/Logo.png}" alt="Title" />
+            <div class="card-body">
+                <h4 class="card-title" th:text="${coffee.name}">N</h4>
+                <p class="card-text" th:text="${coffee.price}">P</p>
+                <p class="card-text" th:text="${coffee.description}">D</p>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 text-center">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Have any questions? Feel free to reach out to us!</p>
-            <form>
-                <div class="form-group mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group mb-3">
-                    <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Coffee Shop. All Rights Reserved.</p>
-    </footer>
-
+    
+    
+ 
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
