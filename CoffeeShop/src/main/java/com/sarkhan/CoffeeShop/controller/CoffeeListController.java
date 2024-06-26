@@ -54,4 +54,5 @@ public String updateCoffee(@PathVariable("id") int id, @ModelAttribute("coffee")
     model.addAttribute("coffee", coffee);
     return "new-coffee";  
 }
+
 }

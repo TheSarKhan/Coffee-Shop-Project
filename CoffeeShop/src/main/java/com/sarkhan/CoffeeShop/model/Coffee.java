@@ -17,4 +17,5 @@ public class Coffee {
     private String name;
  private float price;
  private  String description;
+ private String image;
 }
