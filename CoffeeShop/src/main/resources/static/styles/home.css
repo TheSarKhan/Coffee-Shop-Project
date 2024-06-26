@@ -37,5 +37,140 @@ body {
 footer {
     background-color: #343a40;
     color: #ffffff;
+}body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand .logo {
+    height: 40px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin: 0 15px;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.find-store {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.find-store i {
+    margin-right: 5px;
+}
+
+.sign-in, .join-now {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.sign-in {
+    background-color: white;
+    color: black;
+}
+
+.join-now {
+    background-color: black;
+    color: white;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand .logo {
+    height: 40px;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.find-store {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.find-store i {
+    margin-right: 5px;
+}
+
+.sign-in, .join-now {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.sign-in {
+    background-color: white;
+    color: black;
+}
+
+.join-now {
+    background-color: black;
+    color: white;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 767px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .find-store, .sign-in, .join-now {
+        margin: 10px 0;
+    }
 }
 
