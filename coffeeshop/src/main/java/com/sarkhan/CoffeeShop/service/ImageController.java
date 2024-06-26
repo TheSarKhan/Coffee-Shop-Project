@@ -14,7 +14,7 @@ public class ImageController {
 
     private final Path rootLocation = Paths.get("upload-dir");
 
-    @GetMapping("/images/{filename:.+}")
+    @GetMapping("/uploads/{filename:.+}")
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
         try {
             Path file = rootLocation.resolve(filename);
