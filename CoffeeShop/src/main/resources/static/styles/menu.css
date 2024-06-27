@@ -63,3 +63,43 @@
     font-size: 1em; /* Metin boyutunu ayarlar */
     color: #666; /* Metin rengini ayarlar */
 }
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background: url('coffee-shop.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+} 

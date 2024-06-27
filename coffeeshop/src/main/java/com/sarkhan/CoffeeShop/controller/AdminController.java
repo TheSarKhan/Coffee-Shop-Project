@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sarkhan.CoffeeShop.file.StorageService;
 import com.sarkhan.CoffeeShop.jpa.coffeeJPA.CoffeeJPA;
 import com.sarkhan.CoffeeShop.model.Coffee;
-import com.sarkhan.CoffeeShop.service.StorageService;
 
 @Controller
 public class AdminController {

@@ -28,6 +28,12 @@ public String showMenuPage(Model model) {
  model.addAttribute("coffees",coffees);
     return "menu";
 }
+@GetMapping(path="/")
+public String directHomePage(Model model) {
+    List<Coffee> coffees=coffeeJPA.findAll();
+ model.addAttribute("coffees",coffees);
+    return "home";
+}
 @GetMapping(path="/error")
 public String showErrorPage() {
     return  "error";
