@@ -1,14 +1,11 @@
 package com.sarkhan.CoffeeShop.file;
  
-
+ 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@ConfigurationProperties(prefix = "storage")
+@ConfigurationProperties("properties")
 public class StorageProperties {
-    
-    private String location = "upload-dir";  // Varsayılan konum
+    private String location="upload-dir";
 
     public String getLocation() {
         return location;
