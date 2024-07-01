@@ -12,8 +12,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/login", "/register","/" , "/images/**", "/styles/**" ,"/error", "/home", "/menu", "/navbar").permitAll() // İzin verilen sayfalar
-                .requestMatchers("/static/**").permitAll() // Statik dosyalara izin ver
+                .requestMatchers("/login","/" , "/register", "/error", "/home", "/menu", "/navbar","/images/**","/styles/**", "/upload-dir/**").permitAll() // İzin verilen sayfalar
                 .anyRequest().authenticated() // Diğer sayfalar için kimlik doğrulama gerekli
             )
             .formLogin(form -> form
