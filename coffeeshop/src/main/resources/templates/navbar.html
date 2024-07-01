@@ -39,15 +39,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" th:href="@{/gift-cards}">Gift Cards</a>
                             </li>
-                            <a class="nav-link" style="color: red;" th:href="@{/logout}">Logout</a>
+                            <a class="nav-link" style="color: red;" th:href="@{/logout}" sec:authorize="isAuthenticated()">Logout</a>
                         </li>
                         </ul>
                         <div class="d-flex">
                             <a class="nav-link find-store d-flex align-items-center" th:href="@{/find-store}">
                                 <i class="fas fa-map-marker-alt"></i> Find a store
                             </a>
-                            <a class="nav-link sign-in" th:href="@{/sign-in}">Sign in</a>
-                            <a class="btn btn-dark join-now" th:href="@{/join-now}">Join now</a>
+                            <a class="nav-link sign-in" th:href="@{/register}" sec:authorize="isAnonymous()">Register</a>
+                            <a class="btn btn-dark join-now" th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
                         </div>
                     </div>
                 </div>
