@@ -40,20 +40,39 @@ public class FileSystemStorageService implements StorageService {
 
     @Override
     public String store(MultipartFile file) {
+
         if (file.isEmpty()) {
-            throw new StorageException("Failed to store empty file");
+         return "fakeimage.png";   
         }
+        String filename = StringUtils.cleanPath(file.getOriginalFilename());
+        String randomFileName = "";
+        try {
+            if (file.isEmpty()) {
+                throw new StorageException("Failed to store empty file " + filename);
+            }
+            if (filename.contains("..")) {
+                // This is a security check
+                throw new StorageException(
+                        "Cannot store file with relative path outside current directory "
+                                + filename);
+            }
+            try (InputStream inputStream = file.getInputStream()) {
 
-        String originalFilename = StringUtils.cleanPath(file.getOriginalFilename());
-        String filename = UUID.randomUUID().toString() + "-" + originalFilename;
 
-        try (InputStream inputStream = file.getInputStream()) {
-            Files.copy(inputStream, this.rootLocation.resolve(filename), StandardCopyOption.REPLACE_EXISTING);
+                String originalFileName = file.getOriginalFilename();
+                UUID uuid = UUID.randomUUID();
+                randomFileName = originalFileName.replace(originalFileName.substring(0, originalFileName.lastIndexOf(".")), uuid.toString());
+
+
+                Files.copy(inputStream, this.rootLocation.resolve(randomFileName),
+                        StandardCopyOption.REPLACE_EXISTING);
+            }
         } catch (IOException e) {
             throw new StorageException("Failed to store file " + filename, e);
         }
 
-        return filename;
+
+        return randomFileName;
     }
 
     @Override
