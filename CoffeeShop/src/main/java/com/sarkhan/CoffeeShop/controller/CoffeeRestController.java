@@ -29,5 +29,5 @@ public List<Coffee> findAll(){
 public Coffee findById(@PathVariable(name="id")Integer id){
   return coffeeJPA.findById(id).get();
 }
-  
+
 }

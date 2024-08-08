@@ -15,3 +15,8 @@ Controller - Melumat uzerinde isleyenler bunlardir
 coffeeName (Model) ==> coffee_name (DB)
 Eger css external importda problem yasanirsa, /static/styles.style.css yolunu yoxlamaq lazimdir. Static qovlugunda olub olmadigina bax !
  Thymeleafda redirect elemek ucun @RestControllerde yox @Controllerde mappingleri (@getmapping @postmapping ve s) yaz
+Access Modifilers :
+Private: Üyeler sadece tanımlandıkları sınıf içerisinde erişilebilir.
+Default: Üyeler, tanımlandıkları sınıf ve aynı paket içerisindeki diğer sınıflar tarafından erişilebilir.
+Protected: Üyeler, tanımlandıkları sınıf, aynı paket içerisindeki diğer sınıflar ve paket dışındaki alt sınıflar tarafından erişilebilir.
+Public: Üyeler, her yerden erişilebilir.
