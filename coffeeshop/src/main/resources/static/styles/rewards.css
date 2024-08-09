@@ -1,0 +1,56 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+         
+        }
+        .step {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step-number {
+            font-size: 30px;
+            color: #00704A;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .step-description {
+            font-size: 16px;
+            color: #666;
+        }
+        .step a {
+            color: #00704A;
+            text-decoration: none;
+        }
+        .step a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #00704A;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .reward-card {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f7f7f7;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .reward-card img {
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+        .reward-card h4 {
+            margin-bottom: 15px;
+            color: #00704A;
+        }
+        .reward-card p {
+            color: #555;
+        }

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.sarkhan.CoffeeShop.jpa.coffeeJPA.UserJPA;
@@ -34,10 +33,16 @@ public String showLoginPage(Model model, User user) {
     return "login";
 }
 @PostMapping("/register")
-public String newUser(@ModelAttribute User user,Model model) {
- userService.registerUser(user);
-  return "redirect:/login";
-}
+    public String registerUser(User user, Model model) {
+        try {
+            userService.registerUser(user);
+            return "redirect:/login"; // Başarıyla kayıt olunduysa login sayfasına yönlendir
+        } catch (IllegalArgumentException e) {
+            model.addAttribute("user", user);
+            model.addAttribute("error", e.getMessage()); // Hata mesajını modelde taşı
+            return "register"; // Aynı sayfayı tekrar göster
+        }
+    }
 
  
 

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>New Coffee</title>
+    <title>New Reward</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,20 +12,17 @@
   <body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Coffee add form</h2>
-        <form th:action="@{/addcoffee}" method="post" th:object="${coffee}" enctype="multipart/form-data">
-          <input type="hidden" th:field="*{id}" >
+        <form th:action="@{/addReward}" method="post" th:object="${reward}" enctype="multipart/form-data">
+          
       
           <div class="form-group">
-              <label for="kahveAdi">Coffee Name</label>
-              <input type="text" class="form-control" th:field="*{name}" id="kahveAdi" placeholder="Enter name">
+              <label for="coffeeReward">Reward Name</label>
+              <input type="text" class="form-control" th:field="*{rewardname}" id="rewardname" placeholder="Enter reward">
           </div>
+ 
           <div class="form-group">
-              <label for="kahveAdi">Coffee Description</label>
-              <input type="text" class="form-control" th:field="*{description}" id="coffeeName" placeholder="Enter description">
-          </div>
-          <div class="form-group">
-              <label for="kahveFiyati">Coffee Price</label>
-              <input type="number" th:field="*{price}" class="form-control" id="coffeeCost" placeholder="Enter price">
+              <label for="beanCount">Bean Count</label>
+              <input type="number" th:field="*{beancount}" class="form-control" id="beancount" placeholder="Enter bean count">
           </div>
           <div class="form-group">
               <div class="custom-file">
